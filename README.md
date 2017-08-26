@@ -96,7 +96,7 @@ For details about how I created the training data, see the next section.
 
 The strategy while designing the model was to create a complex enough model that can learn the behavior of our training data and drive the car autonomously on the simulator. 
 
-My first step was to use a convolution neural network model similar to the Nvidia's architecture. I thought this model might be appropriate because it's also based on similar problem and it actually worked pretty well. 
+Decided to use a convolution neural network model similar to the Nvidia's architecture. I thought this model might be appropriate because it's also based on similar problem and it actually worked pretty well. 
 
 First step was to build a training data. For this, I used the simulator provided by Udacity. I captured 90000+ images(center+left+right camera). The simulator creates a log file which includes left, center, right camera image, steering angle, speed etc. 
 
@@ -112,6 +112,24 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 #### 2. Final Model Architecture
 
 The final model architecture consisted of a convolution neural network with the following layers and layer sizes:
+
+| Layer         | Description                                                                               |
+|---------------|-------------------------------------------------------------------------------------------|
+| Input         | 160x320x3 RGB image                                                                       |
+| Cropping2D    | Cropping layer to crop the images                                                         |
+| Lambda Layer  | Normalization of pixel values using Lambda layer                                          |
+| Convolution2D | 24 filters of 5x 5 dimension, 2x2 stride values with activation function as ReLu          |
+| Convolution2D | 36 filters of 5x 5 dimension, 2x2 stride values with activation function as ReLu          |
+| Convolution2D | 48 filters of 5x 5 dimension, 2x2 stride values with activation function as ReLu          |
+| Convolution2D | 64 filters of 3x3 dimension with default stride val and ReLu activation                   |
+| Convolution2D | 88 filters of 3x3 dimension with default stride val and ReLu activation                   |
+| MaxPooling2D  | MaxPooling layer to reduce the dimension i.e, over-fitting and increase depth of Network  |
+| Flatten       | The final outputs from the above mentioned network is flattened to make a 1D matrix.      |
+| Dense         | Fully connected layer 320 output nodes                                                    |
+| Dropout       | This helps to reduce probability of overfitting. Reduced 50% of nodes.                    |
+| Dense         | Fully connected layer with 100 output nodes                                               |
+| Dense         | Fully connected layer with 50 output nodes                                                |
+| Dense         | Fully connected layer with 1 output node i.e, final steering angle. :smile:               |
 
 
 #### 3. Creation of the Training Set & Training Process

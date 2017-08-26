@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./center.JPG
+[image2]: ./center.JPG "Model Visualization"
 [image3]: ./left.jpg "Recovery Image"
 [image4]: ./right.jpg "Recovery Image"
 [image5]: ./cent1.jpg "Recovery Image"
@@ -32,7 +32,7 @@ My project includes the following files:
 * model.h5 containing a trained convolution neural network 
 * readme.md summarizing the results
 * video.mp4 video recording of autonomously driving car from center camera
-* sdcnd.mp4 video recording of Self Driving Car while testing it.
+* [sdcnd.mp4](https://drive.google.com/file/d/0B5JhOt8s53ruODhjU0ZCR1RvdEk/view?usp=sharing) video recording of Self Driving Car while testing it.
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -120,13 +120,14 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to come back to the track:
 
 ![alt text][image3]
 ![alt text][image4]
 ![alt text][image5]
 
 Then I repeated this process on track two in order to get more data points.
+
 ![](./t2.jpg)
 ![](./t2l.jpg)
 
